@@ -1,0 +1,94 @@
+<% if signed_in? %>
+<div class="row">
+  <div id="mapdiv"></div>
+
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+<%= image_tag("kaart.png", :id => "kaart", :border => 0) %>
+    </section>
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3>Micropost Feed</h3>
+    <%= render 'shared/feed' %>
+  </div>
+  <script> // add all your code to this method, as this will ensure that page is loaded
+    AmCharts.ready(function() {
+        // create AmMap object
+        var map = new AmCharts.AmMap();
+        AmCharts.theme = AmCharts.themes.light;
+        // set path to images
+        map.pathToImages = "assets/";
+
+        /* create data provider object
+         map property is usually the same as the name of the map file.
+
+         getAreasFromMap indicates that amMap should read all the areas available
+         in the map data and treat them as they are included in your data provider.
+         in case you don't set it to true, all the areas except listed in data
+         provider will be treated as unlisted.
+        */
+        var dataProvider = {
+            map: "worldLow",
+            getAreasFromMap:true                    
+        }; 
+        // pass data provider to the map object
+        map.dataProvider = dataProvider;
+
+        /* create areas settings
+         * autoZoom set to true means that the map will zoom-in when clicked on the area
+         * selectedColor indicates color of the clicked area.
+         */
+        map.areasSettings = {
+            autoZoom: true,
+            selectedColor: "#CC0000"
+        };
+
+        // let's say we want a small map to be displayed, so let's create it
+        map.smallMap = new AmCharts.SmallMap();
+
+        // write the map to container div
+        map.write("mapdiv");
+    });</script>
+</div>
+<% else %>
+  <div class="main">
+    <section class="page1">
+      <div class="page_container">
+        <h1>Registreer</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+        
+    </section>        </div>
+        </div>
+  <div class="main">
+    
+    <section class="page2">
+      <div class="page_container">
+        <h1>Kies een bestemming<%= image_tag("kaart.png", :id => "kaart", :border => 0) %>
+</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+      </div>
+    </section>
+    </div>
+  <div class="main">
+    <section class="page3">
+      <div class="page_container">
+        <h1>Plan de reis</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
+    </section>
+  </div>
+ <% end %>
+  <script type="text/javascript">
+      $(".main").onepage_scroll({
+        sectionContainer: "section",
+        easing: "ease",
+        updateURL: true,
+      });
+    </script>
+

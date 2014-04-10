@@ -1,0 +1,23 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class="row">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+     
+        <%= render @microposts %>
+     
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+  
+
+  
+ 
