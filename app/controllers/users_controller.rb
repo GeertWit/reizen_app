@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-flash[:success] = "Profile updated"
+flash[:success] = "Je profiel is bijgewerkt"
       redirect_to @user    else
       render 'edit'
     end
@@ -39,7 +39,7 @@ flash[:success] = "Profile updated"
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welkom op Reis Met Mij"
       redirect_to @user
     else
       render 'new'
@@ -49,7 +49,7 @@ flash[:success] = "Profile updated"
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :age,
+      params.require(:user).permit(:name, :email, :password, :age, :gender, :information, 
                                    :password_confirmation)
     end
    
