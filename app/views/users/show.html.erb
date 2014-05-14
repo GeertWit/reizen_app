@@ -1,14 +1,17 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
-  <aside class="span4">
+  <aside class="span3">
     <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
+      <h2>
+        Naam reiziger:   <%= @user.name %>
+        <br>E-mailadres: <%= @user.email %></br>
+        <%= @user.age %>
+      </h2>
     </section>
   </aside>
 </div>
-<div class="row">
+<!-- <div class="row">
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
      
@@ -16,7 +19,7 @@
      
       <%= will_paginate @microposts %>
     <% end %>
-  </div>
+  </div> -->
   
 
   

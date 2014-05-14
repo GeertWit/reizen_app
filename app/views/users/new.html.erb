@@ -1,20 +1,27 @@
 <% provide(:title, 'Sign up') %>
 <div class="row">
-<h3>Registreer</h3>
+<div class="span8 offset5">
+
+<h1 style="font-family:Century Gothic;">Registreer</h1>
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name %>
+     
+      <%= f.label :Naam %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label :Email %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :Wachtwoord %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Wachtwoord bevestiging" %>
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Maak account", class: "btn btn-md btn-default" %>
+
     <% end %>
-</div>
+</div> 
+
+
+

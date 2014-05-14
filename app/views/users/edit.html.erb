@@ -18,7 +18,10 @@
       <%= f.label :Herhaal_Wachtwoord, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Wjzigingen opslaan", class: "btn btn-small btn-danger" %>
+      <%= f.label :Age %>
+      <%= f.text_field :age %>
+
+      <%= f.submit "Wijzigingen opslaan", class: "btn btn-small btn-danger" %>
     <% end %>
 
   </div>
