@@ -3,7 +3,9 @@ class AddColumnsToUsers < ActiveRecord::Migration
     add_column :users, :age, :integer
     add_column :users, :gender, :string
     add_column :users, :information, :text
-  end
-end
+    add_column :users, :destination, :text
+    add_column :users, :future, :text
+    add_column :users, :home, :string
+   end
 end
 

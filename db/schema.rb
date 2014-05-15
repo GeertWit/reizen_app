@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 20140513112745) do
     t.integer  "age"
     t.string   "gender"
     t.text     "information"
+    t.text     "destination"
+    t.text     "future"
+    t.string   "home"
   end
 
 end

@@ -49,8 +49,9 @@ flash[:success] = "Je profiel is bijgewerkt"
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :age, :gender, :information, 
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :age, :gender, 
+                                   :information, :destination, :password_confirmation,
+                                   :future, :home,)
     end
    
    
@@ -64,3 +65,4 @@ flash[:success] = "Je profiel is bijgewerkt"
       redirect_to(root_url) unless current_user?(@user)
     end
   end
+
