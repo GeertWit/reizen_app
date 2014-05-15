@@ -26,7 +26,15 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div> -->
-  
+
+  <a href="<%= @user.attach.url %> ">
+              <b> File attached </b></a> <br/>
+              <%= image_tag @user.pic.url %> <br/>
+               <%= image_tag @user.pic.url(:medium) %>
+              <br/>
+
+<%= image_tag @user.pic.url(:thumb) %>
+<br/>
 
   
  

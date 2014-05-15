@@ -21,3 +21,10 @@ end
       self.remember_token = User.hash(User.new_remember_token)
     end
 end
+
+validates :name, :presence => true    
+validates :email, :presence => true
+has_attached_file :pic, :styles => 
+{ :medium => "300x300>", :thumb => "100x100>" }
+has_attached_file :attach
+end

@@ -26,26 +26,6 @@
 
       <%= f.label :Extra_informatie_over_mij %> 
       <%= f.text_area :information %>
-
-      
-
-
-
-
-
-
-
-
-
- 
-      
-
-
-   
-
-
- 
-
      
 
 <br><br><br><br><br><br>
@@ -62,4 +42,16 @@
           </div>
 
 
-          <%= radio_button :user, :gender, :Man  %>
+
+
+<%= form_for @user, :html => { :multipart => true }
+                                              do |f| %>
+
+ <p> <b> attachment </b><br/>
+      <%= f.file_field :attach %>
+    </p>
+   
+   <p>
+     <b> Picture </b><br/>
+     <%= f.file_field :pic %>
+  </p>

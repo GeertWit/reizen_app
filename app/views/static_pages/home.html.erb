@@ -1,55 +1,118 @@
-<% if signed_in? %>
+ <div id="top" class="header">
+    <div class="vert-text">
+        <h1>Reis met mij</h1>
+        <h3>
+            <em>Samen reizen is fantastisch</em>
+        </em></h3>
+        <a href="#about" class="btn btn-default btn-lg">Lees verder</a>
+    </div>
+</div>
 
-<div class="row">
-  <aside class="span4">
-  
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-    <section>
-      <%= render 'shared/micropost_form' %>
-    </section>
-  </aside>
-  <div class="span8">
-    <h3>Micropost Feed</h3>
-    <%= render 'shared/feed' %>
-  </div>
-</div>
-<% else %>
-<div class="main">
-  <section class="page1">
-    <div class="page_container">
-      <h1>Registreer</h1>
-      <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
-    </section>        
-  </div>
-</div>
-<div class="main">
-  <section class="page2">
-    <div class="page_container">
-      <h1>Kies een bestemming<%= image_tag("kaart.png", :id => "kaart", :border => 0) %>
-      </h1>
-      <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <h1>Over ons</h1>
+                <p class="lead">"<i><p>Wij van ReisMetMij zijn in 2014 gestart met het maken van deze web-applicatie. Uit onderzoek is gebleken dat veel mensen graag een reis willen maken, maar daarvoor een laatste zetje in de goede richting nodig hebben. Veel mensen zijn op zoek naar een reismaatje om hun trip te realiseren.
+
+Daarom willen wij reislustige mensen, met dezelfde reisinteresses bij elkaar brengen. Ons doel is dat de reizigers op een ongedwongen manier voorbereidingen kunnen treffen om hun reis te maken.</p>
+
+<p>Als de reizigers uiteindelijk met elkaar op reis zijn. </p></i>"<small><br><br>
+               </small>
+            </div>
+        </div>
     </div>
-  </section>
 </div>
-<div class="main">
-  <section class="page3">
-    <div class="page_container">
-      <h1>Plan de reis</h1>
-      <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<!-- /Intro -->
+
+<!-- Services -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h1>Onze service</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-2 text-center">
+                <div class="service-item">
+                    <i class="service-icon fa fa-rocket">'_'</i>
+                    <h4>Titel</h4>
+                    <p>Beschrijving</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <i class="service-icon fa fa-magnet">0_0</i>
+                    <h4>Titel</h4>
+                    <p>Beschrijving</p>
+                </div>
+            </div>
+        
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 </div>
-<script type="text/javascript">
-$(".main").onepage_scroll({
-  sectionContainer: "section",
-  easing: "ease",
-  updateURL: true,
+<!-- /Services -->
+
+
+
+
+
+<!-- Map -->
+<div id="contact" class="map">
+    <iframe width="100%" height="100%" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://maps.google.nl/maps?f=q&amp;source=s_q&amp;hl=nl&amp;geocode=&amp;aq=&amp;sll=53.184282,6.135907&amp;sspn=0.011303,0.012081&amp;ie=UTF8&amp;hq=&amp;hnear=Warmoltsstrjitte+35,+9281+PL+Harkema&amp;ll=53.184282,6.135907&amp;spn=0.011354,0.012081&amp;t=m&amp;z=14&amp;output=embed"></iframe>
+  <br /><small>
+</div>
+
+
+<!-- /Map -->
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">    
+                <hr>
+                <p>&copy; Reis met mij | 2014</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /Footer -->
+
+
+ <!-- JavaScript -->
+    <script>
+$("#menu-close").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
 });
 </script>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+});
+</script>
+<script>
+$(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
 
-
-
-
-<% end %>
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+});
+</script>
